@@ -1,0 +1,11 @@
+build
+.vscode
+tags
+tags.lock
+.west/
+bootloader/
+modules/
+tools/
+*.hex
+.DS_Store
+**/.DS_Store
