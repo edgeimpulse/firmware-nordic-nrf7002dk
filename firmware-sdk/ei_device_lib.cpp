@@ -232,13 +232,16 @@ EI_IMPULSE_ERROR ei_start_impulse_static_data(bool debug, float* data, size_t si
     ei_printf("Predictions:\r\n");
     for (uint16_t i = 0; i < EI_CLASSIFIER_LABEL_COUNT; i++) {
         ei_printf("  %s: ", ei_classifier_inferencing_categories[i]);
-        ei_printf("%.5f\r\n", result.classification[i].value);
+        ei_printf_float(result.classification[i].value);
+        ei_printf("\r\n");
     }
 #endif
 
     // Print anomaly result (if it exists)
 #if EI_CLASSIFIER_HAS_ANOMALY == 1
-    ei_printf("Anomaly prediction: %.3f\r\n", result.anomaly);
+    ei_printf("Anomaly prediction: ");
+    ei_printf_float(result.anomaly);
+    ei_printf("\r\n");
 #endif
     return res;
 }
