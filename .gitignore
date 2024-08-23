@@ -9,3 +9,4 @@ tools/
 *.hex
 .DS_Store
 **/.DS_Store
+create-arduino-library.sh
